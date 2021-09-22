@@ -1,0 +1,52 @@
+{
+  "note": [
+    {
+      "content": "Learn SASS",
+      "date": "Tuesday, September 21, 2021",
+      "checked": false,
+      "id": 1
+    },
+    {
+      "content": "Learn HTML",
+      "date": "Tuesday, September 21, 2021",
+      "checked": false,
+      "id": 2
+    },
+    {
+      "content": "Learn CSS",
+      "date": "Tuesday, September 21, 2021",
+      "checked": false,
+      "id": 3
+    },
+    {
+      "content": "Learn ReactJS",
+      "date": "Tuesday, September 21, 2021",
+      "checked": false,
+      "id": 4
+    },
+    {
+      "content": "Learn JavaScript",
+      "date": "Tuesday, September 21, 2021",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "content": "Learn SCSS",
+      "date": "Wednesday, September 22, 2021",
+      "checked": false,
+      "id": 6
+    },
+    {
+      "content": "Learn NodeJS",
+      "date": "Wednesday, September 22, 2021",
+      "checked": false,
+      "id": 7
+    },
+    {
+      "content": "Learn JQuery",
+      "date": "Wednesday, September 22, 2021",
+      "checked": false,
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+:root {
+    --blue-color: #93b5c6;
+    --purple-color: #c9ccd5;
+    --lighter-purple-color: #e4d8dc;
+    --pink-color: #ffe3e3;
+    --grey-color: #fcfcfc;
+
+    --input-text-color: black;
+
+    --text-font: "Nanum Pen Script", cursive;
+}
+
+* {
+    font-family: var(--text-font);
+    box-sizing: border-box;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--grey-color);
+}
+
+#main-container > h1 {
+    font-family: var(--text-font);
+    font-weight: bolder;
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: url("./grunge-brush-stroke.png");
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    padding: 8px 0;
+}
+
+.content-container {
+    background-color: var(--pink-color);
+    padding: 30px;
+    min-height: 70vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.7s;
+}
+
+.content-container:hover {
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 5px var(--blue-color);
+}
+
+.content-container > h2,
+.content-container .date-time {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+    margin: 10px 0 20px;
+}
+
+.content-container .date-time {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content-container .add-todo > input[type="text"] {
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: var(--input-text-color);
+    font-size: 1.6rem;
+    padding: 10px 15px 0;
+    border-bottom: dashed 3px rgba(0, 0, 0, 0.5);
+    width: 40vw;
+    transition: 0.3s;
+}
+
+input[type="text"]::placeholder {
+    color: var(--input-text-color);
+    opacity: 0.7;
+    font-size: 1.5rem;
+    transition: 0.5s;
+    letter-spacing: 0.2rem;
+}
+
+input[type="text"]:focus::placeholder {
+    color: transparent;
+    transition: 0.5s;
+}
+
+.content-container .add-todo > button {
+    outline: none;
+    /* border: none; */
+    /* background: var(--lighter-purple-color); */
+    padding: 10px 20px;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    transition: 0.5s;
+    width: 100px;
+    border: 3px dashed rgba(0, 0, 0, 0.8);
+    background: transparent;
+    margin-left: 10px;
+}
+
+.content-container .add-todo > button:hover,
+.edit-container > button:hover {
+    /* background: var(--purple-color); */
+    cursor: pointer;
+    transform: translateX(5px);
+    transform: translateY(-5px);
+    border-radius: 5px;
+}
+
+.content-container span {
+    transition: 0.5s;
+    color: black;
+}
+
+.todo-list-container {
+    width: 50vw;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.todo-list-container p {
+    font-family: var(--text-font);
+    font-size: 1.4rem;
+    transition: 0.5s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.todo-list-container li {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.visible-container {
+    display: flex;
+    align-items: center;
+}
+
+.edit-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.edit-container > input {
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 3px dashed var(--lighter-purple-color);
+    width: 40vw;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.edit-container > button {
+    margin-left: 20px;
+    width: 60px;
+    height: 30px;
+    border: 2px dashed rgba(0, 0, 0, 0.5);
+    background: transparent;
+    font-size: 1rem;
+    line-height: 1rem;
+    transition: 0.5s;
+}
+
+li > .hidden {
+    display: none;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: display 0s, opacity 0.5s linear;
+}
+
+.toggle-checkbox {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-right: 30px;
+    appearance: none;
+    border: 2px dashed black;
+    position: relative;
+}
+
+.toggle-checkbox:checked,
+.toggle-checkbox:hover {
+    border-radius: 5px;
+    transform: translateX(10px);
+    transform: translateY(-5px);
+}
+
+.toggle-checkbox:checked::before {
+    content: "\2714";
+    font-size: 1.8rem;
+    position: absolute;
+    top: -18px;
+}
+
+.todo-list-container img {
+    width: 15px;
+}
+
+.manager-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manager-container > div {
+    margin-left: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Hover */
+.content-container .add-todo > input:hover,
+.content-container .add-todo > input:focus,
+.content-container > h2:hover,
+.content-container .date-time:hover,
+.manager-container > div:hover {
+    transform: translateX(10px);
+    transform: translateY(-5px);
+}
+
+.change-opacity {
+    opacity: 0.4;
+}
+
+.not-allowed-item {
+    cursor: not-allowed;
+}
+
+p.disabled-item,
+.manager-container.disabled-item {
+    pointer-events: none;
+}
+
+.note-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 44vw;
+}
+
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 10px;
+    }
+    .content-container {
+        width: 90vw;
+    }
+    .content-container .add-todo {
+        display: flex;
+        align-items: flex-end;
+        width: 80vw;
+    }
+    .content-container .add-todo > input[type="text"] {
+        border-bottom: dashed 2px rgba(0, 0, 0, 0.5);
+    }
+    .content-container .add-todo > button {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo-list-container {
+        width: 80vw;
+    }
+    .todo-list-container li {
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+    .note-content-container,
+    .edit-container > input {
+        width: 70vw;
+    }
+    .todo-list-container img {
+        width: 10px;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
+    .content-container {
+        width: 90vw;
+    }
+    .content-container .add-todo > input[type="text"] {
+        width: 50vw;
+    }
+    .todo-list-container {
+        width: 70vw;
+    }
+    .note-content-container,
+    .edit-container > input {
+        width: 70vw;
+    }
+}
